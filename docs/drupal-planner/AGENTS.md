@@ -119,7 +119,7 @@ Sub-planners often work together for complex projects:
 
 ## External Dependencies
 
-- [drupal-critic](https://github.com/zivtech/drupal-meta-skill) — Companion critic (this repo)
+- [drupal-critic](https://github.com/zivtech/drupal-meta-skills) — Companion critic (this repo)
 - [zivtech-meta-skills](https://github.com/zivtech/zivtech-meta-skills) — Source for companion critics (content-model-critic, taxonomy-critic, drupal-theme-critic, search-discovery-critic)
 - [obra/superpowers](https://github.com/obra/superpowers) — brainstorming, plan writing, TDD, verification
 - [flonat/claude-research](https://github.com/flonat/claude-research) — code archaeology

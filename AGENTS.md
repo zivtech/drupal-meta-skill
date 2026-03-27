@@ -1,4 +1,4 @@
-# AGENTS.md — drupal-meta-skill
+# AGENTS.md — drupal-meta-skills
 
 | Agent | Type | Command | Companion / Role |
 |-------|------|---------|------------------|

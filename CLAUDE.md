@@ -1,4 +1,4 @@
-# drupal-meta-skill
+# drupal-meta-skills
 
 This repository is the consolidated public package for Zivtech's Drupal planner-critic-executor workflow.
 

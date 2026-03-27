@@ -18,4 +18,4 @@ Before shipping changes:
 1. Check required skill files still exist under root `.claude/skills/`.
 2. Run `python scripts/verify_no_copied_skills.py`.
 3. Run `python scripts/refresh_external_skills.py --check`.
-4. Confirm docs and install instructions point to `https://github.com/zivtech/drupal-meta-skill`.
+4. Confirm docs and install instructions point to `https://github.com/zivtech/drupal-meta-skills`.

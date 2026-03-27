@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A standalone **prompt-only** Claude Code skill package for planning Drupal implementations before coding. No build system, no runtime code, no dependencies — all deliverables are markdown files that install into `~/.claude/`.
 
-This is the companion planner to [drupal-critic](https://github.com/zivtech/drupal-meta-skill). The planner designs architectures before code; the critic reviews implementations after code.
+This is the companion planner to [drupal-critic](https://github.com/zivtech/drupal-meta-skills). The planner designs architectures before code; the critic reviews implementations after code.
 
 ## Repository Structure
 
@@ -126,7 +126,7 @@ cp -r .claude/skills/* ~/.claude/skills/
 cp .claude/agents/*.md ~/.claude/agents/
 
 # Or install via claude-skills
-npx claude-skills add https://github.com/zivtech/drupal-meta-skill
+npx claude-skills add https://github.com/zivtech/drupal-meta-skills
 ```
 
 ## Drupal Architecture Principles Encoded

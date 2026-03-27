@@ -1,8 +1,8 @@
-# drupal-meta-skill
+# drupal-meta-skills
 
 Drupal planner-critic-executor bundle for Claude Code.
 
-**[Visual Explainer](https://zivtech.github.io/drupal-meta-skill/)**  
+**[Visual Explainer](https://zivtech.github.io/drupal-meta-skills/)**  
 This repo consolidates the work that previously lived across `drupal-planner` and `drupal-critic`, plus the `drupal-config-executor` generation step.
 
 ## Why this bundle exists
@@ -105,15 +105,15 @@ drupal-planner -> implementation -> drupal-critic
 ## Install
 
 ```bash
-npx claude-skills add https://github.com/zivtech/drupal-meta-skill
+npx claude-skills add https://github.com/zivtech/drupal-meta-skills
 ```
 
 Manual install:
 
 ```bash
-git clone https://github.com/zivtech/drupal-meta-skill.git
-cp -r drupal-meta-skill/.claude/skills/* ~/.claude/skills/
-cp drupal-meta-skill/.claude/agents/*.md ~/.claude/agents/
+git clone https://github.com/zivtech/drupal-meta-skills.git
+cp -r drupal-meta-skills/.claude/skills/* ~/.claude/skills/
+cp drupal-meta-skills/.claude/agents/*.md ~/.claude/agents/
 ```
 
 ## Quick examples
