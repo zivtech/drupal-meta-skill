@@ -19,6 +19,7 @@
       --teal: #22a98b;
       --gold: #f3a73f;
       --red: #ff6f61;
+      --violet: #a78bfa;
       --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
       --font-display: "Source Serif 4", serif;
       --font-body: "Space Grotesk", sans-serif;
@@ -36,6 +37,31 @@
         radial-gradient(circle at 82% 18%, rgba(34,169,139,0.16), transparent 22%),
         linear-gradient(180deg, #081019, #07131d 58%, #0a1723);
       min-height: 100vh;
+    }
+
+    /* Skip navigation */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 100;
+      padding: 10px 18px;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 0 0 8px 0;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      left: 0;
+    }
+
+    /* Focus indicators */
+    a:focus-visible,
+    .button:focus-visible {
+      outline: 2px solid #8fd3ff;
+      outline-offset: 3px;
     }
 
     .shell {
@@ -57,7 +83,8 @@
     .topline a,
     .footer a {
       color: var(--blue);
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 3px;
       font-weight: 700;
     }
 
@@ -292,6 +319,8 @@
       line-height: 1.75;
       color: #d8f2ff;
       overflow-x: auto;
+      white-space: pre;
+      margin: 0;
     }
 
     .commands {
@@ -317,6 +346,151 @@
       color: var(--muted);
     }
 
+    /* A11y lifecycle pipeline */
+    .lc-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      margin-bottom: 24px;
+    }
+
+    .lc-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .lc-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .lc-c-plan { background: var(--blue); }
+    .lc-c-critic { background: var(--gold); }
+    .lc-c-manual { background: var(--muted); }
+    .lc-c-exec { background: var(--teal); }
+    .lc-c-test { background: var(--violet); }
+
+    .lc-pipeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 12px;
+      list-style: none;
+      padding: 0 0 16px;
+      margin: 0;
+    }
+
+    .lc-pipeline::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 5%;
+      right: 5%;
+      height: 2px;
+      background: rgba(143, 211, 255, 0.10);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .lc-step {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 14px 6px 20px;
+      border-radius: 16px;
+      background: var(--panel-2);
+      border: 1px solid rgba(143, 211, 255, 0.08);
+      border-top: 3px solid;
+      gap: 4px;
+    }
+
+    .lc-s-plan { border-top-color: var(--blue); }
+    .lc-s-critic { border-top-color: var(--gold); }
+    .lc-s-manual { border-top-color: var(--muted); }
+    .lc-s-exec { border-top-color: var(--teal); }
+    .lc-s-test { border-top-color: var(--violet); }
+
+    .lc-num {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .lc-s-plan .lc-num { color: var(--blue); }
+    .lc-s-critic .lc-num { color: var(--gold); }
+    .lc-s-manual .lc-num { color: var(--muted); }
+    .lc-s-exec .lc-num { color: var(--teal); }
+    .lc-s-test .lc-num { color: var(--violet); }
+
+    .lc-step strong {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .lc-step code,
+    .lc-agent-text {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--muted);
+    }
+
+    .lc-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -9px;
+      top: 28px;
+      width: 6px;
+      height: 6px;
+      border-top: 2px solid rgba(143, 211, 255, 0.25);
+      border-right: 2px solid rgba(143, 211, 255, 0.25);
+      transform: rotate(45deg);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .lc-badge {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(243, 167, 63, 0.14);
+      color: #ffd08d;
+      border: 1px solid rgba(243, 167, 63, 0.20);
+    }
+
+    .lc-role {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 1px 6px;
+      border-radius: 999px;
+      margin-top: 2px;
+    }
+
+    .lc-s-plan .lc-role { background: rgba(58,164,223,0.12); color: #8fd3ff; }
+    .lc-s-critic .lc-role { background: rgba(243,167,63,0.12); color: #ffd08d; }
+    .lc-s-manual .lc-role { background: rgba(157,181,194,0.12); color: var(--muted); }
+    .lc-s-exec .lc-role { background: rgba(34,169,139,0.14); color: #91ead7; }
+    .lc-s-test .lc-role { background: rgba(167,139,250,0.14); color: #c4b5fd; }
+
     @media (max-width: 960px) {
       .hero,
       .three-up,
@@ -341,17 +515,40 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .lc-pipeline {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .lc-pipeline::before {
+        display: none;
+      }
+
+      .lc-step::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .lc-pipeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <div class="topline">
-      <span>Zivtech Drupal planner + critic + config executor for Claude Code</span>
-      <a href="https://github.com/zivtech/drupal-meta-skills">github.com/zivtech/drupal-meta-skills</a>
-    </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="shell topline">
+    <span>Zivtech Drupal planner + critic + config executor for Claude Code</span>
+    <a href="https://github.com/zivtech/drupal-meta-skills">github.com/zivtech/drupal-meta-skills</a>
+  </header>
 
-    <section class="hero">
+  <main class="shell" id="main-content">
+    <section class="hero" aria-label="Introduction">
       <div class="panel hero-main">
         <div class="eyebrow">One Drupal architecture lane</div>
         <h1>drupal-meta-skills</h1>
@@ -376,7 +573,7 @@
         </div>
       </div>
 
-      <aside class="panel hero-side">
+      <div class="panel hero-side" role="group" aria-label="Project statistics">
         <div class="stat">
           <div class="meta">Planners</div>
           <div class="value">5+1</div>
@@ -392,11 +589,11 @@
           <div class="value">1</div>
           <p>Config executor closes the gap between architecture intent and YAML artifacts for content model, taxonomy, and search specs.</p>
         </div>
-      </aside>
+      </div>
     </section>
 
-    <section class="panel section">
-      <h2>Three lanes in one repo</h2>
+    <section class="panel section" aria-labelledby="heading-lanes">
+      <h2 id="heading-lanes">Three lanes in one repo</h2>
       <p>This bundle exists because Drupal problems often begin in one phase and surface in another. A weak content model creates migration pain. A missing cache context looks fine until personalized output leaks. A config decision that seems local becomes a deploy problem later. This repo keeps those decisions in a single architecture lane.</p>
       <div class="three-up">
         <article class="lane plan">
@@ -429,8 +626,8 @@
       </div>
     </section>
 
-    <section class="panel section" id="workflow">
-      <h2>Workflow</h2>
+    <section class="panel section" id="workflow" aria-labelledby="heading-workflow">
+      <h2 id="heading-workflow">Workflow</h2>
       <div class="steps">
         <div class="card">
           <ol>
@@ -441,23 +638,89 @@
             <li>Refine with Drupal-specific evidence rather than broad code-review heuristics.</li>
           </ol>
         </div>
-        <div class="diagram">/drupal-planner
+        <pre class="diagram" role="img" tabindex="0" aria-label="Workflow: drupal-planner flows to drupal-config-executor, then to implementation review, then to drupal-critic">/drupal-planner
   or
 /drupal-planner.content-model
 /drupal-planner.taxonomy
 /drupal-planner.theme
 /drupal-planner.search
-        ↓
+        &#x2193;
 /drupal-config-executor
-        ↓
+        &#x2193;
 implementation / artifact review
-        ↓
-/drupal-critic</div>
+        &#x2193;
+/drupal-critic</pre>
       </div>
     </section>
 
-    <section class="panel section">
-      <h2>Install</h2>
+    <section class="panel section" id="a11y-lifecycle" aria-labelledby="heading-a11y">
+      <h2 id="heading-a11y">The 8-Step Accessibility Lifecycle</h2>
+      <p>The <code>a11y-critic</code> serves at <strong>two checkpoints</strong> — after planning and after testing. This dual-review loop catches design-level accessibility gaps early and implementation-level regressions late, before they ship.</p>
+
+      <div class="lc-legend" role="group" aria-label="Role legend">
+        <span class="lc-legend-item"><span class="lc-dot lc-c-plan" aria-hidden="true"></span> Planner</span>
+        <span class="lc-legend-item"><span class="lc-dot lc-c-critic" aria-hidden="true"></span> Critic</span>
+        <span class="lc-legend-item"><span class="lc-dot lc-c-manual" aria-hidden="true"></span> Manual</span>
+        <span class="lc-legend-item"><span class="lc-dot lc-c-exec" aria-hidden="true"></span> Executor</span>
+        <span class="lc-legend-item"><span class="lc-dot lc-c-test" aria-hidden="true"></span> Test</span>
+      </div>
+
+      <ol class="lc-pipeline" role="list" aria-label="Accessibility lifecycle steps">
+        <li class="lc-step lc-s-plan">
+          <span class="lc-num" aria-hidden="true">1</span>
+          <strong>Plan</strong>
+          <code>a11y-planner</code>
+          <span class="lc-role">Planner</span>
+        </li>
+        <li class="lc-step lc-s-critic">
+          <span class="lc-num" aria-hidden="true">2</span>
+          <strong>Critique Plan</strong>
+          <code>a11y-critic</code>
+          <span class="lc-role">Critic</span>
+          <span class="lc-badge">Checkpoint 1</span>
+        </li>
+        <li class="lc-step lc-s-manual">
+          <span class="lc-num" aria-hidden="true">3</span>
+          <strong>Revise</strong>
+          <span class="lc-agent-text">manual</span>
+          <span class="lc-role">Manual</span>
+        </li>
+        <li class="lc-step lc-s-exec">
+          <span class="lc-num" aria-hidden="true">4</span>
+          <strong>Implement</strong>
+          <code>executor</code>
+          <span class="lc-role">Executor</span>
+        </li>
+        <li class="lc-step lc-s-test">
+          <span class="lc-num" aria-hidden="true">5</span>
+          <strong>Test</strong>
+          <code>a11y-test</code>
+          <span class="lc-role">Test</span>
+        </li>
+        <li class="lc-step lc-s-critic">
+          <span class="lc-num" aria-hidden="true">6</span>
+          <strong>Critique Impl</strong>
+          <code>a11y-critic</code>
+          <span class="lc-role">Critic</span>
+          <span class="lc-badge">Checkpoint 2</span>
+        </li>
+        <li class="lc-step lc-s-exec">
+          <span class="lc-num" aria-hidden="true">7</span>
+          <strong>Fix</strong>
+          <code>executor</code>
+          <span class="lc-role">Executor</span>
+        </li>
+        <li class="lc-step lc-s-test">
+          <span class="lc-num" aria-hidden="true">8</span>
+          <strong>Re-test</strong>
+          <code>a11y-test</code>
+          <span class="lc-role">Test</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="panel section" aria-labelledby="heading-install">
+      <h2 id="heading-install">Install</h2>
       <div class="steps">
         <div class="card">
           <ol>
@@ -466,17 +729,17 @@ implementation / artifact review
             <li>After installation, use the main planner, the relevant sub-planner, the config executor, and the critic as one workflow rather than as isolated prompts.</li>
           </ol>
         </div>
-        <div class="diagram">npx claude-skills add https://github.com/zivtech/drupal-meta-skills
+        <pre class="diagram" tabindex="0" aria-label="Installation commands"><code>npx claude-skills add https://github.com/zivtech/drupal-meta-skills
 
 # manual install
 git clone https://github.com/zivtech/drupal-meta-skills.git
 cp -r drupal-meta-skills/.claude/skills/* ~/.claude/skills/
-cp drupal-meta-skills/.claude/agents/*.md ~/.claude/agents/</div>
+cp drupal-meta-skills/.claude/agents/*.md ~/.claude/agents/</code></pre>
       </div>
     </section>
 
-    <section class="panel section">
-      <h2>What this bundle is trying to prevent</h2>
+    <section class="panel section" aria-labelledby="heading-prevent">
+      <h2 id="heading-prevent">What this bundle is trying to prevent</h2>
       <div class="commands">
         <article class="card">
           <h3>Architecture debt discovered late</h3>
@@ -498,8 +761,8 @@ cp drupal-meta-skills/.claude/agents/*.md ~/.claude/agents/</div>
       </div>
     </section>
 
-    <section class="panel section">
-      <h2>Commands included</h2>
+    <section class="panel section" aria-labelledby="heading-commands">
+      <h2 id="heading-commands">Commands included</h2>
       <div class="commands">
         <article class="card">
           <h3>Planning</h3>
@@ -520,11 +783,11 @@ cp drupal-meta-skills/.claude/agents/*.md ~/.claude/agents/</div>
         </article>
       </div>
     </section>
-
-    <section class="panel footer">
-      <span>Built by Zivtech. Bundled with root installable `.claude/` assets, copied protocol templates, research assets, and supply-chain validation scripts.</span>
-      <a href="https://github.com/zivtech/drupal-meta-skills">View source</a>
-    </section>
   </main>
+
+  <footer class="panel footer">
+    <span>Built by Zivtech. Bundled with root installable `.claude/` assets, copied protocol templates, research assets, and supply-chain validation scripts.</span>
+    <a href="https://github.com/zivtech/drupal-meta-skills">View source</a>
+  </footer>
 </body>
 </html>
