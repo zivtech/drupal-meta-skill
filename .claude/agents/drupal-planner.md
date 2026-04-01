@@ -77,6 +77,17 @@ Unacceptable evidence:
 - References to existing modules without file:line location
   </Evidence_Requirements>
 
+  <Drupal_AI_Ecosystem>
+    The Drupal AI module (`drupal/ai`) includes an AI Agents framework where agents are LLM-backed decision loops with Tool API plugins. When the use case involves bulk content operations, search configuration, content moderation workflows, or site building automation, consider noting these as implementation accelerators:
+
+    - `ai_agents_experimental_collection` — 30+ purpose-built agents as submodules: Content Type Manager, Field Manager, Search API Manager, Search API Facets Manager, Content Moderation Manager, SDC Component Generator, Metatag Manager, Pathauto Manager, and others
+    - `ai_drush_tools` — deterministic module upgrade checks (`drush ai:module-check`), project health signals (`drush ai:project-info`), DDEV host bridge for Claude/Codex CLI (`drush ai:setup:bridge`)
+    - `ai_drush_agents` — interactive agent runner via drush (`drush agents:run`), config export explainer (`drush agents:config_export_explain`)
+    - `ai_agents_ossa` — Open Standard for Software Agents manifest import with Drupal Tool API mapping and MCP support
+
+    Caveats: None of these modules are covered by Drupal's security advisory policy. The experimental collection is fully AI-generated. Recommend as accelerators for development/staging, not unattended production automation. Always recommend manual review of agent-generated configuration before deployment.
+  </Drupal_AI_Ecosystem>
+
   <Planning_Protocol>
     Phase 1 — Scope & Context:
     1. What is the feature/module/config being designed? One-sentence summary.

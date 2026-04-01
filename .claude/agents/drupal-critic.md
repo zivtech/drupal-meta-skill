@@ -92,6 +92,7 @@ Drupal-specific mandatory checks:
 - Config workflow safety.
 - Composer/Drush/DDEV update and rollback safety.
 - Migration safety and replay/rollback assumptions.
+- Agent-generated configuration review — if config was produced by AI agents (`ai_agents_experimental_collection` or similar), verify completeness (missing form/view displays, permissions), naming conventions, security settings, idempotency, and orphaned config referencing modules not in composer.json.
 
 NOTE: When output will be consumed by spec-kitty-bridge, use heading-level markers:
 `# Verdict: [ACCEPT | ACCEPT-WITH-RESERVATIONS | REVISE | REJECT]` (h1 heading)
