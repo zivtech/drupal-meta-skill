@@ -1,6 +1,6 @@
 ---
 name: drupal-planner.canvas
-description: Plan Canvas Code Component architectures — component definition, metadata/props, data fetching, styling, composability, utilities, and upload/deploy pipelines. Use when designing Canvas components for Drupal CMS site building before coding.
+description: "Plan Canvas Code Components — definition, metadata, props, data fetching, styling, validation."
 ---
 
 # Drupal Canvas Planner

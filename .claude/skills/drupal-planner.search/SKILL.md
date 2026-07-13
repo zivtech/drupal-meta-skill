@@ -1,6 +1,6 @@
 ---
 name: drupal-planner.search
-description: Plan Drupal search architectures — Search API configuration, Solr/Elasticsearch backends, faceted search with Facets module, Views integration, autocomplete, and content discovery patterns. Use when designing Drupal search before implementation.
+description: "Plan Drupal search — Search API, Solr/Elasticsearch, faceted search, indexing strategies."
 ---
 
 # Drupal Search Planner

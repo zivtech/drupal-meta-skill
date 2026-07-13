@@ -1,7 +1,6 @@
 ---
 name: drupal-config-executor
-description: "Generates Drupal config YAML from drupal-planner specs — entity types, fields, form/view displays, taxonomy, search (Opus)"
-model: claude-opus-4-6
+description: "Generates Drupal config YAML from drupal-planner specs — entity types, fields, form/view displays, taxonomy, search"
 ---
 
 <Agent_Prompt>

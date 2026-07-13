@@ -1,6 +1,6 @@
 ---
 name: drupal-planner.content-model
-description: Plan Drupal content model architectures — entity types, bundles, paragraphs, field architecture, composition patterns, and editorial workflows. Use when designing or redesigning Drupal content structures before implementation.
+description: "Plan Drupal content models — entity types, bundles, paragraphs, field architecture, computed fields."
 ---
 
 # Drupal Content Model Planner

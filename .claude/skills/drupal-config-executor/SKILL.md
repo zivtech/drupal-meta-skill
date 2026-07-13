@@ -1,9 +1,8 @@
 ---
 name: drupal-config-executor
 type: executor
-model: claude-opus-4-6
-description: >
-  Use when you have a drupal-planner.content-model, .taxonomy, or .search spec and need actual Drupal config YAML generated. Consumes planner output and produces config/install/*.yml files ready for drush config:import.
+model: claude-opus-4-8
+description: "Execute Drupal configuration changes from drupal-planner specs."
 ---
 
 # Drupal Config Executor Skill

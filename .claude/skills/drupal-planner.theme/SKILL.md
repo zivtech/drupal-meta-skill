@@ -1,6 +1,6 @@
 ---
 name: drupal-planner.theme
-description: Plan Drupal theme architectures — base theme selection, component strategy (SDC/traditional), CSS methodology, preprocess design, template organization, asset management, and accessibility. Use when designing Drupal themes before coding.
+description: "Plan Drupal themes — base theme, component strategy (SDC/traditional), CSS methodology, responsive design."
 ---
 
 # Drupal Theme Planner

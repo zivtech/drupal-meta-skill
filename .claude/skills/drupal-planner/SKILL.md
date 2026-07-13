@@ -1,6 +1,6 @@
 ---
+description: Plan Drupal implementations — entities, config, migrations, cache, permissions.
 name: drupal-planner
-description: Plan Drupal implementations (entity types, config schema, migrations, cache strategy, permissions, module architecture) before coding. Use when designing new features, modules, config entities, or migrating existing sites. Routes to focused sub-planners for content model, taxonomy, theme, and search architecture.
 ---
 
 # Drupal Planner

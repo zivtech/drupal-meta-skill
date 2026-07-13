@@ -1,6 +1,6 @@
 ---
 name: drupal-critic
-description: Drupal-specific harsh review orchestration for plans, code, and implementation notes. Use when reviewing Drupal modules/themes/config/deploy workflows, contrib patch decisions, cache behavior, migration plans, Drush/DDEV/Composer updates, or any Drupal change where you need evidence-backed critique. Always run security/new-hire/ops perspectives; activate open-source-contributor, site-builder, and content-editor perspectives when context indicates they will reveal additional fixes.
+description: "Drupal code, config, and architecture review for PRs, implementations, and migration plans."
 ---
 
 # Drupal Critic

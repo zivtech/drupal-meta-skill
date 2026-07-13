@@ -1,7 +1,7 @@
 ---
 name: drupal-critic
 description: Drupal-specific harsh reviewer with evidence-backed findings and context-driven audience lenses
-model: claude-opus-4-6
+model: claude-opus-4-8
 disallowedTools: Write, Edit
 ---
 

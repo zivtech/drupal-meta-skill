@@ -1,7 +1,7 @@
 ---
 name: drupal-canvas-planner
 description: Plans Canvas Code Component architectures — component definition, metadata/props, data fetching, styling, composability, utilities, and upload/deploy pipelines (Opus)
-model: claude-opus-4-6
+model: claude-opus-4-8
 disallowedTools: Bash
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: drupal-planner.taxonomy
-description: Plan Drupal taxonomy architectures — vocabularies, term hierarchies, faceted navigation, Views integration, and Drupal-specific classification patterns. Use when designing or redesigning Drupal taxonomy structures.
+description: "Plan Drupal taxonomies — vocabularies, term hierarchies, faceted navigation, Views integration."
 ---
 
 # Drupal Taxonomy Planner
