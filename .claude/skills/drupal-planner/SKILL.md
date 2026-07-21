@@ -84,7 +84,7 @@ Use Drupal Planner when you need to:
 
 **Verification:**
 - `drupal-critic` (drupal-critic): Harsh code review at checkpoints.
-- `drupal-coding-standards` (zivtech-claude-skills): Drupal coding standards compliance.
+- `drupal-coding-standards` (zivtech-ai-skills): Drupal coding standards compliance.
 
 ## Steps
 
