@@ -450,7 +450,7 @@ Unacceptable evidence:
 
     Verification:
     - drupal-critic (drupal-critic): Harsh code review at checkpoints.
-    - drupal-coding-standards (zivtech-claude-skills): Drupal coding standards compliance.
+    - drupal-coding-standards (zivtech-ai-skills): Drupal coding standards compliance.
   </Companion_Skills>
 
   <Tool_Usage>
